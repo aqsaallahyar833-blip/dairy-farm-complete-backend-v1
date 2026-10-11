@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Global responsive foundation
+   Guarantees the whole app adapts cleanly from small phones (320px)
+   up to large desktops, regardless of per-view markup.
+   ========================================================================== */
+
+html {
+  /* Prevent the whole page from scrolling sideways on small screens */
+  overflow-x: hidden;
+  /* Respect notches on modern phones in portrait + landscape */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  max-width: 100%;
+  overflow-x: hidden;
+  /* Stop long words / URLs from forcing horizontal overflow */
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Media and embedded content should never exceed their container */
+img,
+video,
+svg,
+canvas,
+iframe,
+embed,
+object {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make every element respect its parent's width (defensive box model) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Wide <pre>/<code> blocks scroll instead of stretching the layout */
+pre,
+code {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* Native tables (those not already wrapped in an overflow-x container)
+   become horizontally scrollable on their own so they can never break
+   the page layout on narrow screens. */
+table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/* Keep normal block layout for tables that already live inside a
+   scroll container (class "table-auto"/flex usage is unaffected). */
+@supports (display: block) {
+  table:not(.table-layout-fixed) {
+    /* Still allow full table width when there is room */
+    width: max-content;
+    min-width: 100%;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+

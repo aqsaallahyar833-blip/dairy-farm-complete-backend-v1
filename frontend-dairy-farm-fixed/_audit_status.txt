@@ -1,0 +1,9 @@
+﻿TSC_SENTINEL=True
+BUILD_SENTINEL=True
+---PARENT DIRS---
+frontend-dairy-farm-fixed
+---PARENT FILES---
+$null 0
+DAIRY_FARM_COMPLETION_AUDIT.md 66422
+nodever.txt 42
+_versions.txt 42

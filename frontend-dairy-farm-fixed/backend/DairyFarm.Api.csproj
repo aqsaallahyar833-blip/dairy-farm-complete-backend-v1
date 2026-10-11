@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>DairyFarm.Api</RootNamespace>
+    <AssemblyName>DairyFarm.Api</AssemblyName>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.12" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <!--
+      Phase 2A. These are Microsoft's own first-party packages, not third-party
+      alternatives. They are required for JWT Bearer authentication and for
+      System.IdentityModel.Tokens.Jwt (token issuance).
+      PasswordHasher<T> already ships in the shared framework via
+      Microsoft.Extensions.Identity.Core, so no extra package is needed for it.
+    -->
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.0" />
+  </ItemGroup>
+
+</Project>

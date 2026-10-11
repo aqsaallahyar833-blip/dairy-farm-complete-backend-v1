@@ -1,0 +1,78 @@
+﻿backup-src-20261009-221614/components/AnimalProfileView.tsx(133,40): error TS2353: Object literal may only specify known properties, and 'animalId' does not exist in type '{ page?: number; pageSize?: number; }'.
+backup-src-20261009-221614/components/FinanceView.tsx(95,24): error TS2554: Expected 1 arguments, but got 0.
+backup-src-20261009-221614/components/InventoryView.tsx(140,31): error TS2322: Type 'undefined[] | T' is not assignable to type 'T[]'.
+  Type 'T' is not assignable to type 'T[]'.
+backup-src-20261009-221614/components/InventoryView.tsx(150,24): error TS2345: Argument of type 'Promise<ApiResponse<VaccineStock[]>>' is not assignable to parameter of type 'Promise<{ success: boolean; data: Medicine; }>'.
+  Type 'ApiResponse<VaccineStock[]>' is not assignable to type '{ success: boolean; data: Medicine; }'.
+    Types of property 'data' are incompatible.
+      Type 'VaccineStock[]' is missing the following properties from type 'Medicine': id, farmId, name, category, and 8 more.
+backup-src-20261009-221614/components/InventoryView.tsx(151,26): error TS2345: Argument of type 'Promise<ApiResponse<SemenStraw[]>>' is not assignable to parameter of type 'Promise<{ success: boolean; data: SemenStraw; }>'.
+  Type 'ApiResponse<SemenStraw[]>' is not assignable to type '{ success: boolean; data: SemenStraw; }'.
+    Types of property 'data' are incompatible.
+      Type 'SemenStraw[]' is missing the following properties from type 'SemenStraw': id, farmId, bullName, breed, and 7 more.
+backup-src-20261009-221614/components/InventoryView.tsx(152,25): error TS2345: Argument of type 'Promise<ApiResponse<Warehouse[]>>' is not assignable to parameter of type 'Promise<{ success: boolean; data: Warehouse; }>'.
+  Type 'ApiResponse<Warehouse[]>' is not assignable to type '{ success: boolean; data: Warehouse; }'.
+    Types of property 'data' are incompatible.
+      Type 'Warehouse[]' is missing the following properties from type 'Warehouse': id, farmId, name, code, and 8 more.
+backup-src-20261009-221614/components/InventoryView.tsx(170,51): error TS2339: Property 'quantity' does not exist on type 'FeedItem'.
+backup-src-20261009-221614/components/InventoryView.tsx(171,46): error TS2339: Property 'minimumStock' does not exist on type 'FeedItem'.
+backup-src-20261009-221614/components/InventoryView.tsx(171,69): error TS2339: Property 'quantity' does not exist on type 'FeedItem'.
+backup-src-20261009-221614/components/InventoryView.tsx(171,89): error TS2339: Property 'minimumStock' does not exist on type 'FeedItem'.
+backup-src-20261009-221614/components/InventoryView.tsx(178,49): error TS2339: Property 'quantity' does not exist on type 'FeedItem'.
+backup-src-20261009-221614/components/InventoryView.tsx(179,12): error TS2304: Cannot find name 'InventorySummaryMetrics'.
+backup-src-20261009-221614/components/InventoryView.tsx(191,41): error TS2554: Expected 0 arguments, but got 2.
+backup-src-20261009-221614/components/InventoryView.tsx(213,44): error TS2554: Expected 0 arguments, but got 2.
+backup-src-20261009-221614/components/InventoryView.tsx(216,44): error TS2554: Expected 0 arguments, but got 1.
+backup-src-20261009-221614/components/InventoryView.tsx(224,42): error TS2554: Expected 0 arguments, but got 2.
+backup-src-20261009-221614/components/InventoryView.tsx(227,42): error TS2554: Expected 0 arguments, but got 1.
+backup-src-20261009-221614/components/InventoryView.tsx(235,46): error TS2554: Expected 0 arguments, but got 2.
+backup-src-20261009-221614/components/InventoryView.tsx(238,46): error TS2554: Expected 0 arguments, but got 1.
+backup-src-20261009-221614/components/InventoryView.tsx(264,46): error TS2554: Expected 0 arguments, but got 1.
+backup-src-20261009-221614/components/InventoryView.tsx(266,44): error TS2554: Expected 0 arguments, but got 1.
+backup-src-20261009-221614/components/InventoryView.tsx(268,48): error TS2554: Expected 0 arguments, but got 1.
+backup-src-20261009-221614/components/ReportsView.tsx(209,23): error TS2554: Expected 1 arguments, but got 0.
+backup-src-20261009-221614/services/index.ts(95,5): error TS2353: Object literal may only specify known properties, and 'lactating' does not exist in type 'AnimalListFilters'.
+backup-src-20261009-221614/services/index.ts(100,20): error TS2551: Property 'breedId' does not exist on type 'CreateAnimalInput'. Did you mean 'breed'?
+backup-src-20261009-221614/services/index.ts(100,43): error TS2551: Property 'breedId' does not exist on type 'CreateAnimalInput'. Did you mean 'breed'?
+backup-src-20261009-221614/services/index.ts(103,18): error TS2339: Property 'notes' does not exist on type 'CreateAnimalInput'.
+backup-src-20261009-221614/services/index.ts(369,32): error TS2304: Cannot find name 'DashboardService'.
+backup-src-20261009-221614/services/index.ts(481,29): error TS2304: Cannot find name 'ReportService'.
+src/components/AnimalProfileView.tsx(133,40): error TS2353: Object literal may only specify known properties, and 'animalId' does not exist in type '{ page?: number; pageSize?: number; }'.
+src/components/FinanceView.tsx(95,24): error TS2554: Expected 1 arguments, but got 0.
+src/components/InventoryView.tsx(140,31): error TS2322: Type 'undefined[] | T' is not assignable to type 'T[]'.
+  Type 'T' is not assignable to type 'T[]'.
+src/components/InventoryView.tsx(150,24): error TS2345: Argument of type 'Promise<ApiResponse<VaccineStock[]>>' is not assignable to parameter of type 'Promise<{ success: boolean; data: Medicine; }>'.
+  Type 'ApiResponse<VaccineStock[]>' is not assignable to type '{ success: boolean; data: Medicine; }'.
+    Types of property 'data' are incompatible.
+      Type 'VaccineStock[]' is missing the following properties from type 'Medicine': id, farmId, name, category, and 8 more.
+src/components/InventoryView.tsx(151,26): error TS2345: Argument of type 'Promise<ApiResponse<SemenStraw[]>>' is not assignable to parameter of type 'Promise<{ success: boolean; data: SemenStraw; }>'.
+  Type 'ApiResponse<SemenStraw[]>' is not assignable to type '{ success: boolean; data: SemenStraw; }'.
+    Types of property 'data' are incompatible.
+      Type 'SemenStraw[]' is missing the following properties from type 'SemenStraw': id, farmId, bullName, breed, and 7 more.
+src/components/InventoryView.tsx(152,25): error TS2345: Argument of type 'Promise<ApiResponse<Warehouse[]>>' is not assignable to parameter of type 'Promise<{ success: boolean; data: Warehouse; }>'.
+  Type 'ApiResponse<Warehouse[]>' is not assignable to type '{ success: boolean; data: Warehouse; }'.
+    Types of property 'data' are incompatible.
+      Type 'Warehouse[]' is missing the following properties from type 'Warehouse': id, farmId, name, code, and 8 more.
+src/components/InventoryView.tsx(170,51): error TS2339: Property 'quantity' does not exist on type 'FeedItem'.
+src/components/InventoryView.tsx(171,46): error TS2339: Property 'minimumStock' does not exist on type 'FeedItem'.
+src/components/InventoryView.tsx(171,69): error TS2339: Property 'quantity' does not exist on type 'FeedItem'.
+src/components/InventoryView.tsx(171,89): error TS2339: Property 'minimumStock' does not exist on type 'FeedItem'.
+src/components/InventoryView.tsx(178,49): error TS2339: Property 'quantity' does not exist on type 'FeedItem'.
+src/components/InventoryView.tsx(179,12): error TS2304: Cannot find name 'InventorySummaryMetrics'.
+src/components/InventoryView.tsx(191,41): error TS2554: Expected 0 arguments, but got 2.
+src/components/InventoryView.tsx(213,44): error TS2554: Expected 0 arguments, but got 2.
+src/components/InventoryView.tsx(216,44): error TS2554: Expected 0 arguments, but got 1.
+src/components/InventoryView.tsx(224,42): error TS2554: Expected 0 arguments, but got 2.
+src/components/InventoryView.tsx(227,42): error TS2554: Expected 0 arguments, but got 1.
+src/components/InventoryView.tsx(235,46): error TS2554: Expected 0 arguments, but got 2.
+src/components/InventoryView.tsx(238,46): error TS2554: Expected 0 arguments, but got 1.
+src/components/InventoryView.tsx(264,46): error TS2554: Expected 0 arguments, but got 1.
+src/components/InventoryView.tsx(266,44): error TS2554: Expected 0 arguments, but got 1.
+src/components/InventoryView.tsx(268,48): error TS2554: Expected 0 arguments, but got 1.
+src/components/ReportsView.tsx(209,23): error TS2554: Expected 1 arguments, but got 0.
+src/services/index.ts(95,5): error TS2353: Object literal may only specify known properties, and 'lactating' does not exist in type 'AnimalListFilters'.
+src/services/index.ts(100,20): error TS2551: Property 'breedId' does not exist on type 'CreateAnimalInput'. Did you mean 'breed'?
+src/services/index.ts(100,43): error TS2551: Property 'breedId' does not exist on type 'CreateAnimalInput'. Did you mean 'breed'?
+src/services/index.ts(103,18): error TS2339: Property 'notes' does not exist on type 'CreateAnimalInput'.
+src/services/index.ts(369,32): error TS2304: Cannot find name 'DashboardService'.
+src/services/index.ts(481,29): error TS2304: Cannot find name 'ReportService'.

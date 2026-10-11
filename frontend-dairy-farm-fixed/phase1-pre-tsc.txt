@@ -1,0 +1,136 @@
+src/components/AnimalProfileView.tsx(40,10): error TS2305: Module '"../services"' has no exported member 'animalService'.
+src/components/AnimalProfileView.tsx(40,25): error TS2305: Module '"../services"' has no exported member 'milkService'.
+src/components/AnimalProfileView.tsx(40,38): error TS2305: Module '"../services"' has no exported member 'breedingService'.
+src/components/AnimalProfileView.tsx(40,55): error TS2724: '"../services"' has no exported member named 'healthService'. Did you mean 'alertService'?
+src/components/AnimalsView.tsx(22,10): error TS2305: Module '"../services"' has no exported member 'animalService'.
+src/components/BreedingView.tsx(25,10): error TS2305: Module '"../services"' has no exported member 'breedingService'.
+src/components/BreedingView.tsx(25,27): error TS2305: Module '"../services"' has no exported member 'animalService'.
+src/components/BreedingView.tsx(25,42): error TS2305: Module '"../services"' has no exported member 'pregnancyService'.
+src/components/FeedView.tsx(21,10): error TS2305: Module '"../services"' has no exported member 'feedService'.
+src/components/FinanceView.tsx(18,26): error TS2305: Module '"../services"' has no exported member 'animalService'.
+src/components/HealthView.tsx(28,10): error TS2724: '"../services"' has no exported member named 'healthService'. Did you mean 'alertService'?
+src/components/HealthView.tsx(28,25): error TS2305: Module '"../services"' has no exported member 'animalService'.
+src/components/HerdTransactionsView.tsx(17,10): error TS2305: Module '"../services"' has no exported member 'animalService'.
+src/components/InventoryView.tsx(140,31): error TS2322: Type 'undefined[] | T' is not assignable to type 'T[]'.
+  Type 'T' is not assignable to type 'T[]'.
+src/components/InventoryView.tsx(179,12): error TS2304: Cannot find name 'InventorySummaryMetrics'.
+src/components/MilkView.tsx(39,10): error TS2305: Module '"../services"' has no exported member 'milkService'.
+src/components/MilkView.tsx(39,23): error TS2305: Module '"../services"' has no exported member 'animalService'.
+src/components/QrAnimalLookupModal.tsx(11,10): error TS2305: Module '"../services"' has no exported member 'animalService'.
+src/components/QuickHealthEntryModal.tsx(13,10): error TS2724: '"../services"' has no exported member named 'healthService'. Did you mean 'alertService'?
+src/components/QuickMilkEntryModal.tsx(15,10): error TS2305: Module '"../services"' has no exported member 'milkService'.
+src/components/QuickMilkEntryModal.tsx(15,23): error TS2305: Module '"../services"' has no exported member 'animalService'.
+src/components/ReportsView.tsx(25,3): error TS2305: Module '"../services"' has no exported member 'animalService'.
+src/components/ReportsView.tsx(26,3): error TS2305: Module '"../services"' has no exported member 'breedingService'.
+src/components/ReportsView.tsx(27,3): error TS2724: '"../services"' has no exported member named 'healthService'. Did you mean 'alertService'?
+src/components/ReportsView.tsx(28,3): error TS2305: Module '"../services"' has no exported member 'feedService'.
+src/components/TasksView.tsx(22,23): error TS2305: Module '"../services"' has no exported member 'animalService'.
+src/services/api/apiClient.ts(1387,37): error TS2304: Cannot find name 'InventoryItem'.
+src/services/api/apiClient.ts(1402,22): error TS2304: Cannot find name 'InventoryItem'.
+src/services/api/apiClient.ts(1405,44): error TS2304: Cannot find name 'InventoryTransaction'.
+src/services/api/apiClient.ts(1418,22): error TS2304: Cannot find name 'InventoryTransaction'.
+src/services/api/apiClient.ts(1423,193): error TS2304: Cannot find name 'Supplier'.
+src/services/api/apiClient.ts(1430,24): error TS2304: Cannot find name 'Supplier'.
+src/services/index.ts(1,32): error TS2304: Cannot find name 'InventoryService'.
+src/services/index.ts(3,31): error TS2304: Cannot find name 'feedService'.
+src/services/index.ts(4,38): error TS2304: Cannot find name 'feedService'.
+src/services/index.ts(5,34): error TS2304: Cannot find name 'feedService'.
+src/services/index.ts(6,27): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(6,39): error TS2304: Cannot find name 'FeedItem'.
+src/services/index.ts(9,31): error TS2304: Cannot find name 'feedService'.
+src/services/index.ts(12,61): error TS2304: Cannot find name 'catalogApi'.
+src/services/index.ts(15,18): error TS2304: Cannot find name 'catalogApi'.
+src/services/index.ts(17,30): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(18,34): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(19,27): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(22,29): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(22,41): error TS2304: Cannot find name 'Vaccine'.
+src/services/index.ts(22,52): error TS2304: Cannot find name 'UNSUPPORTED_VACCINE'.
+src/services/index.ts(23,31): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(23,43): error TS2304: Cannot find name 'Vaccine'.
+src/services/index.ts(23,52): error TS2304: Cannot find name 'UNSUPPORTED_VACCINE'.
+src/services/index.ts(24,30): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(24,42): error TS2304: Cannot find name 'Vaccine'.
+src/services/index.ts(24,51): error TS2304: Cannot find name 'UNSUPPORTED_VACCINE'.
+src/services/index.ts(25,30): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(25,42): error TS2304: Cannot find name 'Vaccine'.
+src/services/index.ts(25,51): error TS2304: Cannot find name 'UNSUPPORTED_VACCINE'.
+src/services/index.ts(26,30): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(26,48): error TS2304: Cannot find name 'UNSUPPORTED_VACCINE'.
+src/services/index.ts(29,26): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(29,38): error TS2304: Cannot find name 'SemenStraw'.
+src/services/index.ts(29,52): error TS2304: Cannot find name 'UNSUPPORTED_SEMEN'.
+src/services/index.ts(30,29): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(30,41): error TS2304: Cannot find name 'SemenStraw'.
+src/services/index.ts(30,53): error TS2304: Cannot find name 'UNSUPPORTED_SEMEN'.
+src/services/index.ts(31,28): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(31,40): error TS2304: Cannot find name 'SemenStraw'.
+src/services/index.ts(31,52): error TS2304: Cannot find name 'UNSUPPORTED_SEMEN'.
+src/services/index.ts(32,28): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(32,40): error TS2304: Cannot find name 'SemenStraw'.
+src/services/index.ts(32,52): error TS2304: Cannot find name 'UNSUPPORTED_SEMEN'.
+src/services/index.ts(33,28): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(33,46): error TS2304: Cannot find name 'UNSUPPORTED_SEMEN'.
+src/services/index.ts(36,31): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(36,43): error TS2304: Cannot find name 'Warehouse'.
+src/services/index.ts(36,56): error TS2304: Cannot find name 'UNSUPPORTED_WAREHOUSE'.
+src/services/index.ts(37,33): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(37,45): error TS2304: Cannot find name 'Warehouse'.
+src/services/index.ts(37,56): error TS2304: Cannot find name 'UNSUPPORTED_WAREHOUSE'.
+src/services/index.ts(38,32): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(38,44): error TS2304: Cannot find name 'Warehouse'.
+src/services/index.ts(38,55): error TS2304: Cannot find name 'UNSUPPORTED_WAREHOUSE'.
+src/services/index.ts(39,32): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(39,44): error TS2304: Cannot find name 'Warehouse'.
+src/services/index.ts(39,55): error TS2304: Cannot find name 'UNSUPPORTED_WAREHOUSE'.
+src/services/index.ts(40,32): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(40,50): error TS2304: Cannot find name 'UNSUPPORTED_WAREHOUSE'.
+src/services/index.ts(43,39): error TS2304: Cannot find name 'inventoryApi'.
+src/services/index.ts(44,30): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(45,33): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(46,30): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(49,34): error TS2304: Cannot find name 'unsupported'.
+src/services/index.ts(49,46): error TS2304: Cannot find name 'InventorySummaryMetrics'.
+src/services/index.ts(49,71): error TS2304: Cannot find name 'UNSUPPORTED_METRICS'.
+src/services/index.ts(52,30): error TS2304: Cannot find name 'FinanceService'.
+src/services/index.ts(53,23): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(54,29): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(55,22): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(56,28): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(57,24): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(58,30): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(59,34): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(61,5): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(62,36): error TS2304: Cannot find name 'supplierApi'.
+src/services/index.ts(63,30): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(64,34): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(66,5): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(69,27): error TS2304: Cannot find name 'TaskService'.
+src/services/index.ts(70,15): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(71,22): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(72,33): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(75,35): error TS2304: Cannot find name 'NotificationService'.
+src/services/index.ts(76,15): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(77,21): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(78,22): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(87,20): error TS2304: Cannot find name 'lookupsApi'.
+src/services/index.ts(90,46): error TS2304: Cannot find name 'lookupsApi'.
+src/services/index.ts(93,37): error TS2304: Cannot find name 'lookupsApi'.
+src/services/index.ts(96,20): error TS2304: Cannot find name 'lookupsApi'.
+src/services/index.ts(99,46): error TS2304: Cannot find name 'lookupsApi'.
+src/services/index.ts(104,20): error TS2304: Cannot find name 'lookupsApi'.
+src/services/index.ts(107,46): error TS2304: Cannot find name 'lookupsApi'.
+src/services/index.ts(112,20): error TS2304: Cannot find name 'lookupsApi'.
+src/services/index.ts(115,46): error TS2304: Cannot find name 'lookupsApi'.
+src/services/index.ts(118,45): error TS2304: Cannot find name 'lookupsApi'.
+src/services/index.ts(119,43): error TS2304: Cannot find name 'lookupsApi'.
+src/services/index.ts(149,32): error TS2304: Cannot find name 'DashboardService'.
+src/services/index.ts(150,45): error TS2304: Cannot find name 'DashboardResult'.
+src/services/index.ts(152,37): error TS2304: Cannot find name 'DashboardResult'.
+src/services/index.ts(160,24): error TS2304: Cannot find name 'dashboardApi'.
+src/services/index.ts(170,31): error TS2304: Cannot find name 'farmReportApi'.
+src/services/index.ts(175,28): error TS2304: Cannot find name 'milkReportApi'.
+src/services/index.ts(184,16): error TS2304: Cannot find name 'farmReportApi'.
+src/services/index.ts(261,29): error TS2304: Cannot find name 'ReportService'.
+src/services/index.ts(262,29): error TS2304: Cannot find name 'mockApi'.
+src/services/index.ts(263,37): error TS2304: Cannot find name 'mockApi'.

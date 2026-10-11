@@ -1,0 +1,158 @@
+﻿
+==============================================================================
+SCENARIO 1: Financial P&L must refuse to invent a value
+==============================================================================
+  [PASS] empty ledger returns INSUFFICIENT_DATA
+  [PASS] insufficient result carries an explanatory message
+  [PASS] no net profit figure is produced
+  [PASS] no discrepancy is produced
+  [PASS] the result names what is missing
+  [PASS] income-only ledger still yields a partial calculation
+  [PASS] partial ledger is flagged as incomplete
+  [PASS] no comparison when no reported figure is supplied
+  [PASS] comparison runs when a reported figure is supplied
+  [PASS] variance is derived from supplied inputs
+
+==============================================================================
+SCENARIO 2: Profit endpoint must not apply default revenue/expenses
+==============================================================================
+  [PASS] profit with no inputs returns INSUFFICIENT_DATA
+  [PASS] no profit figure is produced from missing inputs
+  [PASS] partial inputs still return INSUFFICIENT_DATA
+  [PASS] complete inputs calculate normally
+  [PASS] profit derives from supplied figures
+
+==============================================================================
+SCENARIO 3: Milk calculations must refuse to assume a herd or a rate
+==============================================================================
+  [PASS] no milk records returns INSUFFICIENT_DATA
+  [PASS] milk records alone are calculable
+  [PASS] revenue is null when no rate is supplied
+  [PASS] milking cow count comes from the records, not a default
+  [PASS] revenue derives from the supplied rate
+  [PASS] reconciliation with no data returns INSUFFICIENT_DATA
+  [PASS] no percentage deficit is fabricated
+  [PASS] missing days-elapsed blocks the calculation
+  [PASS] complete inputs reconcile
+  [PASS] expected volume derives from samples and days
+
+==============================================================================
+SCENARIO 4: Withdrawal must report "none" rather than a default hold
+==============================================================================
+  [PASS] no animals are invented
+  [PASS] quarantined volume is null, not a figure
+  [PASS] forfeit is null, not a figure
+  [PASS] no treatments returns INSUFFICIENT_DATA
+  [PASS] count reflects the supplied records
+  [PASS] volume sums the supplied yields
+  [PASS] forfeit derives from the supplied rate
+
+==============================================================================
+SCENARIO 5: Expense per animal must require a real head count
+==============================================================================
+  [PASS] no animal count returns INSUFFICIENT_DATA
+  [PASS] no per-cow figure is produced
+  [PASS] a zero animal count is not silently treated as one
+  [PASS] complete inputs calculate
+  [PASS] per-cow cost derives from supplied figures
+
+==============================================================================
+SCENARIO 6: Safe division must not report an undefined ratio as zero
+==============================================================================
+  [PASS] zero over zero is genuinely zero
+  [PASS] non-zero over zero is null, not zero
+  [PASS] ordinary division still works
+
+==============================================================================
+SCENARIO 7: Validation engine reports NO_DATA rather than a clean pass
+==============================================================================
+  [PASS] empty dataset is not reported as PASS
+  [PASS] data sufficiency is false
+  [PASS] no errors were raised (nothing was checkable)
+  [PASS] no rule is claimed to have run
+  [PASS] skipped rules are reported
+  [PASS] no critical count is fabricated
+  [PASS] per-rule outcomes are reported
+  [PASS] every rule reports INSUFFICIENT_DATA
+  [PASS] real data makes the dataset sufficient
+  [PASS] rules run when data exists
+  [PASS] a clean real dataset passes
+  [PASS] auditable categories are counted
+  [PASS] duplicate animal identifiers are still detected
+
+==============================================================================
+SCENARIO 8: Reproductive cycle calculates only from real dates
+==============================================================================
+  [PASS] no pregnancy/calving rows blocks days-open
+  [PASS] no average days open is produced
+  [PASS] verified conception and calving dates produce a result
+  [PASS] sample size reflects the records
+  [PASS] days open derives from the supplied dates
+  [PASS] an unconfirmed pregnancy is not used as a conception date
+
+==============================================================================
+SCENARIO 9: Dashboard validator must not produce corrected figures
+==============================================================================
+  [PASS] empty dashboard data is flagged insufficient
+  [PASS] no rules run without records
+  [PASS] badge reports no data rather than a pass
+  [PASS] badge does not claim verified integrity
+  [PASS] cards are still produced
+  [PASS] every card is marked not evaluable
+  [PASS] no proof steps are fabricated
+  [PASS] corrected net result is null
+  [PASS] corrected milk discrepancy is null
+  [PASS] no withdrawal animals are claimed
+
+==============================================================================
+SCENARIO 10: Audit data readiness reflects measured counts only
+==============================================================================
+  [PASS] all eight categories are present
+  [PASS] no category claims availability without records
+  [PASS] no category message contains a fabricated figure
+  [PASS] zero categories available
+  [PASS] all categories blocked
+  [PASS] overall state is not READY
+  [PASS] financial is insufficient with no rows
+  [PASS] measured income row count is 0
+  [PASS] measured expense row count is 0
+  [PASS] an unsupplied count is null (not measurable) rather than zero
+  [PASS] real rows make financial available
+  [PASS] milk quality remains schema-blocked because no tank or pricing schedule exists
+  [PASS] feed efficiency remains schema-blocked because nutrition data is absent
+
+==============================================================================
+SCENARIO 11: Configuration contains no measured findings
+==============================================================================
+  [PASS] the fabricated knownCriticalIssues array is removed
+  [PASS] a data provenance notice is present
+  [PASS] the provenance notice states the file holds no measurements
+
+==============================================================================
+SCENARIO 12: The nine audit rules carry no figures
+==============================================================================
+  [PASS] all nine rules are defined
+  [PASS] RULE-01 contains no fabricated figure
+  [PASS] RULE-01 carries a feasibility classification
+  [PASS] RULE-02 contains no fabricated figure
+  [PASS] RULE-02 carries a feasibility classification
+  [PASS] RULE-03 contains no fabricated figure
+  [PASS] RULE-03 carries a feasibility classification
+  [PASS] RULE-04 contains no fabricated figure
+  [PASS] RULE-04 carries a feasibility classification
+  [PASS] RULE-05 contains no fabricated figure
+  [PASS] RULE-05 carries a feasibility classification
+  [PASS] RULE-06 contains no fabricated figure
+  [PASS] RULE-06 carries a feasibility classification
+  [PASS] RULE-07 contains no fabricated figure
+  [PASS] RULE-07 carries a feasibility classification
+  [PASS] RULE-08 contains no fabricated figure
+  [PASS] RULE-08 carries a feasibility classification
+  [PASS] RULE-09 contains no fabricated figure
+  [PASS] RULE-09 carries a feasibility classification
+  [PASS] days-open is classified as calculable from the current schema
+
+==============================================================================
+RESULT: 105 passed, 0 failed, 105 total
+==============================================================================
+

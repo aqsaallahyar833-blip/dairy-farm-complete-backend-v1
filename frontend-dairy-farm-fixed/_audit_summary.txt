@@ -1,0 +1,3 @@
+﻿BUILD_EXIT=EXIT=0
+BUILD_LAST=(!) Some chunks are larger than 500 kB after minification. Consider: | - Using dynamic import() to code-split the application | - Use build.rollupOptions.output.manualChunks to improve chunking:  | https://rollupjs.org/configuration-options/#output-manualchunks | - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m | [32mΓ£ô built in 19.31s[39m
+TSC_ERR_COUNT=58

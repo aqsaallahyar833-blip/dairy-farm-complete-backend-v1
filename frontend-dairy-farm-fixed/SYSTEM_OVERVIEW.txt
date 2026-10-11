@@ -1,0 +1,65 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║         🐄 PUNJAB PURE DAIRY - ARCHITECTURE & DATA FLOW OVERVIEW 🐄        ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+1. SYSTEM COMPONENT HIERARCHY
+─────────────────────────────────────────────────────────────────────────────
+
+                     ┌─────────────────────────────┐
+                     │         config.json         │
+                     │  (Benchmarks & Tolerances)  │
+                     └──────────────┬──────────────┘
+                                    │
+       ┌────────────────────────────┼────────────────────────────┐
+       ▼                            ▼                            ▼
+┌─────────────────────┐    ┌─────────────────────┐    ┌─────────────────────┐
+│ dairyCalculations.js│    │  dairyValidation.js │    │dashboardValidation.js│
+│                     │    │                     │    │                     │
+│ • Daily Milk Yield  │◄───┤ • Financial Checks  │◄───┤ • Summary Audits    │
+│ • True P&L Audit    │    │ • Expense Anomaly   │    │ • Transparency Cards│
+│ • Cost Per Cow Norms│    │ • Monthly Recon     │    │ • Warning Badges    │
+│ • Yield Recon Engine│    │ • Withdrawal Hold   │    │ • Corrected Metrics │
+│ • Withdrawal Forfeit│    │ • Herd Census       │    │ • Executive Actions │
+└──────────┬──────────┘    └──────────┬──────────┘    └──────────┬──────────┘
+           │                          │                          │
+           └──────────────────────────┼──────────────────────────┘
+                                      ▼
+                        ┌───────────────────────────┐
+                        │       testSuite.js        │
+                        │ (6 Comprehensive Scenarios│
+                        │    30 / 30 Tests Pass)    │
+                        └───────────────────────────┘
+
+
+2. DATA AUDIT & INTERCEPTION PIPELINE
+─────────────────────────────────────────────────────────────────────────────
+
+[Raw Database Records]
+   ├── Milk Parlor Shifts (Morning, Evening, Third)
+   ├── Ledger Expenses (Feed, Labor, Fuel, LESCO, Maintenance)
+   ├── Ledger Incomes (Milk Procurement, Livestock, Manure)
+   └── Vet Clinical Records (Antibiotic Treatments, Withdrawal Dates)
+             │
+             ▼
+   [DairyValidationEngine]
+      ├── 1. Check Negative or Corrupted Values
+      ├── 2. Calculate Audited True P&L (Inflow - Outflow)
+      ├── 3. Compare with Dashboard Summary (+112k vs -125k) -> Flag ISSUE #1
+      ├── 4. Validate Daily Expense per Cow against Rs 2,850 Benchmark -> Flag ISSUE #3
+      ├── 5. Cross-examine Monthly Total against Parlor Mean -> Flag ISSUE #4
+      └── 6. Verify Antibiotic Withheld Cows -> Lock Bulk Tank -> Flag ISSUE #5
+             │
+             ▼
+   [DashboardValidationService]
+      ├── Emits Visual Severity Badge (CRITICAL_ACTION_REQUIRED)
+      ├── Injects 4 Step-by-Step Mathematical Proof Cards
+      ├── Supplies Corrected Unit Economics to Override Erroneous Displays
+      └── Generates Actionable Management Recommendations
+             │
+             ▼
+   [Executive Dashboard UI]
+      ├── Audited Live Badge with Instant Discrepancy Breakdown
+      ├── Transparent Formula Inspections
+      └── One-Click Amortization & Data Entry Correction

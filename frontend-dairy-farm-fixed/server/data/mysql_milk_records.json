@@ -1,0 +1,17 @@
+[
+  {
+    "id": "milk-1789609743435-6gvf",
+    "animalId": "animal-0001",
+    "animalTag": "001",
+    "animalName": "Bella",
+    "date": "2024-05-15",
+    "session": "Morning",
+    "quantityLiters": 14.8,
+    "fatPercent": 3.9,
+    "snfPercent": 8.7,
+    "proteinPercent": 3.2,
+    "scc": 180000,
+    "isRejected": false,
+    "createdAt": "2026-09-17T01:49:03.436Z"
+  }
+]

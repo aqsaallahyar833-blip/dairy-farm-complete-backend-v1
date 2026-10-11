@@ -1,0 +1,124 @@
+﻿=== 0. BASELINE ===
+animals=9 history=15 idents=4 photos=8 users=0
+sequence: AN-10
+
+=== 1. BOOTSTRAP (opt-in only) ===
+users=1 owner_links=1 hash_len=84
+2nd run: Bootstrap not performed: An Owner account already exists. The bootstrap will not modify or replace it.
+
+users still=1
+api_up=True
+
+=== 2. AUTH ===
+valid login     : 200
+  token_len=712 roles=Owner
+wrong password  : 401
+unknown user    : 401
+missing password: 400
+hash leaked?    : no
+me valid        : 200
+me bad token    : 401
+me no token     : 401
+
+=== 3. UNAUTH WRITE => 401 ===
+  POST   /api/animals            : 401
+  PUT    /api/animals/1          : 401
+  PATCH  /api/animals/1/status   : 401
+  DELETE /api/animals/1/photo/1  : 401
+
+=== 4. CREATE ===
+create           : 201 {"success":true,"message":"Animal created with code 'AN-010'.","data":{"statusHistory":[{"id":16,"newStatus":"ACTIVE","reason":"Initial animal status","changedAt":"2026-09-27T23:56:57","userId":9}],"i...
+sequence now     : AN-11
+animals count    : 10
+new row          : 10 AN-010 FEMALE ACTIVE
+initial history  : old=NULL new=ACTIVE user=9 reason=Initial animal status
+
+=== 5. VALIDATION ===
+dup code         : 409 (expect 409)
+bad farm+sex     : 400
+status=INACTIVE  : 400 (expect 400)
+status=QUARANTINED: 400 (expect 400)
+status=QUARANTINE: 201 (expect 201)
+negative price   : 400 (expect 400)
+earTag create    : 400
+dup earTag       : 400 (expect 400)
+identifications  : 3:EAR_TAG=TAG-DUP-1 | 4:QR=TN2Wylwc167CjM0nPZGvhezcTdL0c7smPiFHNeW4O6Y | 6:QR=jKXdYuLY4P0bs6glXBxwPMB5VmDdMydD7wgDxQuEfYI | 8:QR=QH9YbQWschxfbiScfJEqu0-LzvDVsjEj36Bq1JbDAuA
+
+=== 6. PUT ===
+put name        : 200
+  db            : Renamed By Test | ACTIVE
+put WITH status : 400 (expect 400) {"success":false,"message":"Status cannot be changed with PUT. Use PATCH /api/animals/{id}/status so the change is recorded in ani...
+  status intact : ACTIVE
+put missing     : 404 (expect 404)
+
+=== 7. PARENTAGE ===
+dam=self        : 400 (expect 400)
+
+=== 8. STATUS PATCH ===
+before          : ACTIVE
+ACTIVE->SICK    : 200
+after           : SICK
+history row     : old=ACTIVE new=SICK user=9 reason=Vet observed left hind lameness
+same status     : 400 (expect 400)
+status=INACTIVE : 400 (expect 400)
+SICK->DEAD      : 200
+final status    : DEAD
+history chain   : NULL->ACTIVE/u9[Initial animal status] | ACTIVE->SICK/u9[Vet observed left hind lameness] | SICK->DEAD/u9[Euthanasia after treatment failure]
+anon rows(new)  : none - all attributed
+
+=== 9. NO DELETE ===
+DELETE /api/animals/:id auth   : 405 (expect 405)
+DELETE /api/animals/:id noauth : 405 (expect 405)
+animals count    : 11
+no_delete trigger: 1
+
+=== 10. PHOTOS ===
+jpeg upload     : 200 (expect 200)
+png upload      : 200 (expect 200)
+webp upload     : 200 (expect 200)
+oversized 2.1MB : 413 (expect 413)
+text-as-jpeg    : 400 (expect 400)
+png-as-jpeg     : 400 (expect 400 - mime mismatch)
+no auth         : 401 (expect 401)
+db photo rows   : 1:image/jpeg/510/pri0/by-,2:image/png/508/pri0/by-,3:image/webp/512/pri0/by-,4:image/png/508/pri1/by-,5:image/jpeg/510/pri0/by-,6:image/png/508/pri0/by-,7:image/webp/512/pri0/by-,8:image/png/508/pri1/by-,9:image/jpeg/510/pri0/by9,10:image/png/508/pri0/by9,11:image/webp/512/pri1/by9
+animals.photo   : NULL  <- must be NULL
+GET photo       : 200 bytes=512 ctype=image/webp
+GET photo 404   : 404
+
+=== 11. QR ===
+issue token     : 200
+  token_len=43 (CSPRNG 256-bit base64url)
+resolve token   : 200 {"success":true,"message":"Animal found.","data":{"statusHistory":[{"id":19,"oldStatus":"SICK","newStatus":"DEAD","reason":"Euthan...
+resolve unknown : 404 (expect 404)
+QR rows         : 10:QR=dnZP7v1RHrYQA5... 6:QR=jKXdYuLY4P0bs6... 8:QR=QH9YbQWschxfbi... 4:QR=TN2Wylwc167CjM...
+token==code?    : no - independent of sequential code
+rotate          : 200
+
+=== 12. PHASE 1 REGRESSION ===
+  200  /api/health                           {"success":true,"message":"Operation successful.","data...
+  200  /api/animals                          [{"animalId":1,"animalCode":"AN-001","name":"Cow 001","...
+  200  /api/animals/1                        {"statusHistory":[{"id":1,"newStatus":"ACTIVE","reason"...
+  200  /api/animals/by-code/AN-001           {"statusHistory":[{"id":1,"newStatus":"ACTIVE","reason"...
+  200  /api/breeds                           [{"breedId":3,"name":"Crossbred","description":"Crossbr...
+  200  /api/breeds/1                         {"breedId":1,"name":"Holstein Friesian","description":"...
+  200  /api/breeds/by-name/Holstein%20Friesian{"breedId":1,"name":"Holstein Friesian","description":"...
+  200  /api/farms                            [{"farmId":1,"companyId":1,"name":"Green Dairy Farm","l...
+  200  /api/farms/1                          {"farmId":1,"companyId":1,"name":"Green Dairy Farm","lo...
+  200  /api/animal-groups                    [{"groupId":5,"farmId":1,"farmName":"Green Dairy Farm",...
+  200  /api/animal-groups/1                  {"groupId":1,"farmId":1,"farmName":"Green Dairy Farm","...
+  200  /api/sheds                            []
+  200  /api/animals/1/identifications        []
+  200  /api/animals/1/status-history         [{"id":1,"newStatus":"ACTIVE","reason":"Initial animal ...
+  db: {"connected":true,"database":"dairy farm 1","serverVersion":"8.0.40","latencyMs":1}
+
+=== 13. DB INTEGRITY ===
+base_tables     : 48
+views           : 6
+triggers        : 19
+no_delete trig  : 1
+animals.photo ty: varchar(500)
+milk_records    : 0 (expect 0)
+health_records  : 0 (expect 0)
+animal_sales    : 0 (expect 0)
+sequence        : AN-12
+DONE

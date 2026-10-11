@@ -1,0 +1,5 @@
+﻿--- VERIFY ---
+animals=1 history=1 idents=0 photos=0 users=0 user_roles=0 roles=6 perms=34
+orig animal: 1 1 AN-001 Cow 001 FEMALE ACTIVE
+tables=48 views=6 triggers=19 no_delete=1
+sequence=AN-2

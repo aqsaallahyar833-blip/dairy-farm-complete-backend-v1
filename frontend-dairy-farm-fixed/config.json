@@ -1,0 +1,50 @@
+{
+  "_dataProvenance": {
+    "WARNING": "This file contains CONFIGURABLE RULE THRESHOLDS ONLY. It contains no measured farm data.",
+    "measuredFindings": "NONE. No revenue, expense, milk, health, breeding, feed or inventory measurement in this file came from the 'dairy farm 1' database.",
+    "removedInPhase0": "The former 'knownCriticalIssues' array (Rs 237,855 profit variance, Rs 10,278/cow, 6,743 L deficit, 4 cows withdrawal, Rs 13,125/day forfeit, 12,711 L expected, 4,200 kg shrinkage, SCC 340,000, FCE 1.18, 168 days open) was a hard-coded case study with no database origin. It has been removed and must not be reintroduced.",
+    "thresholdsBelow": "Values under 'benchmarks' and 'validationRules' are ADMINISTRATOR-CONFIGURABLE rule triggers. They are never rendered as measured farm results.",
+    "Phase1": "When the real API is available, every value shown in the Audit module must be read from the database, never from this file."
+  },
+  "farm": {
+    "name": "Punjab Pure Dairy",
+    "location": "Pattoki, Kasur District, Punjab, Pakistan",
+    "currency": "PKR",
+    "currencySymbol": "Rs",
+    "timezone": "Asia/Karachi"
+  },
+  "benchmarks": {
+    "_note": "Rule-trigger thresholds only. These are NOT measurements and must not be displayed as farm results.",
+    "somaticCellCountWarningThreshold": 250000,
+    "somaticCellCountCriticalThreshold": 400000,
+    "feedConversionEfficiencyMin": 1.3,
+    "feedConversionEfficiencyMax": 1.7,
+    "calvingIntervalTargetDays": 385,
+    "voluntaryWaitingPeriodDays": 60,
+    "daysOpenWarningThreshold": 140
+  },
+  "validationRules": {
+    "allowNegativeValues": false,
+    "expenseThresholds": {
+      "_note": "Anomaly trigger levels. An anomaly can only be reported once real expense rows and a real herd count exist.",
+      "warningPerCowDailyPKR": 3500,
+      "criticalPerCowDailyPKR": 5000,
+      "flagAsProbableDataEntryErrorRatio": 2.5
+    },
+    "milkYieldTolerances": {
+      "dailyDropWarningPercent": 10.0,
+      "dailyDropCriticalPercent": 20.0,
+      "monthlyYieldDiscrepancyMaxPercent": 15.0
+    },
+    "withdrawalRules": {
+      "enforceBulkTankLock": true,
+      "strictDiscardMandate": true,
+      "auditLogRequired": true,
+      "defaultHoldingClearanceHours": 24
+    },
+    "reconciliation": {
+      "autoReconcileThresholdDays": 7,
+      "discrepancyAction": "ALERT_AND_HOLD"
+    }
+  }
+}
